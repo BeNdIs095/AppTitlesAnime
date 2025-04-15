@@ -68,14 +68,14 @@
             // 
             btnUpdateType.Location = new Point(130, 13);
             btnUpdateType.Name = "btnUpdateType";
-            btnUpdateType.Size = new Size(111, 31);
+            btnUpdateType.Size = new Size(149, 31);
             btnUpdateType.TabIndex = 1;
-            btnUpdateType.Text = "Обновить";
+            btnUpdateType.Text = "Редактировать";
             btnUpdateType.UseVisualStyleBackColor = true;
             // 
             // btnDeleteType
             // 
-            btnDeleteType.Location = new Point(247, 13);
+            btnDeleteType.Location = new Point(285, 13);
             btnDeleteType.Name = "btnDeleteType";
             btnDeleteType.Size = new Size(91, 31);
             btnDeleteType.TabIndex = 2;
