@@ -28,6 +28,22 @@ namespace AppTitlesAnime
             this.db = new AppContext();
             this.db.Types.Load();
             this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+
+            //Скрытие столбцов
+            dataGridViewTypes.Columns["Id"].Visible = false;
+            dataGridViewTypes.Columns["AnimeTitles"].Visible = false;
+
+            //Изменение названий заголовков столбцов
+            dataGridViewTypes.Columns["TypeName"].HeaderText = "Тип аниме";
+        }
+
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            this.db?.Dispose();
+            this.db = null;
         }
 
         private void FlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -39,6 +55,11 @@ namespace AppTitlesAnime
         {
             FormAddType formAddType = new FormAddType();
             formAddType.ShowDialog();
+        }
+
+        private void FormListTypes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
