@@ -71,10 +71,19 @@ namespace AppTitlesAnime
 
             this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
         }
-        
+
         private void FormListTypes_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpdateType_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTypes.SelectedRows.Count == 0)
+                return;
+
+            int index = dataGridViewTypes.SelectedRows[0].Index;
+            short id = 0;
         }
     }
 }
