@@ -17,5 +17,16 @@ namespace AppTitlesAnime
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormListGenres formListGenres = new FormListGenres();
+            formListGenres.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

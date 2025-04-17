@@ -29,18 +29,64 @@
         private void InitializeComponent()
         {
             btnShowTypes = new Button();
+            btnShowGenres = new Button();
+            labelTop = new Label();
+            panelTop = new Panel();
+            flowLayoutPanelFill = new FlowLayoutPanel();
+            panelTop.SuspendLayout();
+            flowLayoutPanelFill.SuspendLayout();
             SuspendLayout();
             // 
             // btnShowTypes
             // 
             btnShowTypes.AutoSize = true;
-            btnShowTypes.Location = new Point(12, 12);
+            btnShowTypes.Location = new Point(3, 3);
             btnShowTypes.Name = "btnShowTypes";
-            btnShowTypes.Size = new Size(315, 43);
+            btnShowTypes.Size = new Size(141, 43);
             btnShowTypes.TabIndex = 0;
-            btnShowTypes.Text = "Отобразить список \"Типы аниме\"";
+            btnShowTypes.Text = "\"Типы аниме\"";
             btnShowTypes.UseVisualStyleBackColor = true;
             btnShowTypes.Click += BtnShowTypes_Click;
+            // 
+            // btnShowGenres
+            // 
+            btnShowGenres.Location = new Point(150, 3);
+            btnShowGenres.Name = "btnShowGenres";
+            btnShowGenres.Size = new Size(156, 43);
+            btnShowGenres.TabIndex = 1;
+            btnShowGenres.Text = "\"Жанры аниме\"";
+            btnShowGenres.UseVisualStyleBackColor = true;
+            btnShowGenres.Click += button1_Click;
+            // 
+            // labelTop
+            // 
+            labelTop.AutoSize = true;
+            labelTop.Location = new Point(13, 10);
+            labelTop.Name = "labelTop";
+            labelTop.Size = new Size(118, 25);
+            labelTop.TabIndex = 0;
+            labelTop.Text = "Отобразить:";
+            labelTop.Click += label1_Click;
+            // 
+            // panelTop
+            // 
+            panelTop.Controls.Add(labelTop);
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Location = new Point(0, 0);
+            panelTop.Name = "panelTop";
+            panelTop.Padding = new Padding(10);
+            panelTop.Size = new Size(841, 39);
+            panelTop.TabIndex = 3;
+            // 
+            // flowLayoutPanelFill
+            // 
+            flowLayoutPanelFill.Controls.Add(btnShowTypes);
+            flowLayoutPanelFill.Controls.Add(btnShowGenres);
+            flowLayoutPanelFill.Dock = DockStyle.Fill;
+            flowLayoutPanelFill.Location = new Point(0, 39);
+            flowLayoutPanelFill.Name = "flowLayoutPanelFill";
+            flowLayoutPanelFill.Size = new Size(841, 587);
+            flowLayoutPanelFill.TabIndex = 4;
             // 
             // FormMain
             // 
@@ -48,18 +94,26 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(841, 626);
-            Controls.Add(btnShowTypes);
+            Controls.Add(flowLayoutPanelFill);
+            Controls.Add(panelTop);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormMain";
             Text = "Главная форма";
             Load += FormMain_Load;
+            panelTop.ResumeLayout(false);
+            panelTop.PerformLayout();
+            flowLayoutPanelFill.ResumeLayout(false);
+            flowLayoutPanelFill.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button btnShowTypes;
+        private Button btnShowGenres;
+        private Label labelTop;
+        private Panel panelTop;
+        private FlowLayoutPanel flowLayoutPanelFill;
     }
 }

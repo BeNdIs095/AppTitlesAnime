@@ -50,15 +50,16 @@
             flowLayoutPanelTop.Location = new Point(0, 0);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
             flowLayoutPanelTop.Padding = new Padding(10);
-            flowLayoutPanelTop.Size = new Size(934, 57);
+            flowLayoutPanelTop.Size = new Size(934, 61);
             flowLayoutPanelTop.TabIndex = 0;
             flowLayoutPanelTop.Paint += FlowLayoutPanel1_Paint;
             // 
             // btnAddType
             // 
+            btnAddType.AutoSize = true;
             btnAddType.Location = new Point(13, 13);
             btnAddType.Name = "btnAddType";
-            btnAddType.Size = new Size(111, 31);
+            btnAddType.Size = new Size(111, 35);
             btnAddType.TabIndex = 0;
             btnAddType.Text = "Добавить";
             btnAddType.UseVisualStyleBackColor = true;
@@ -66,9 +67,10 @@
             // 
             // btnUpdateType
             // 
+            btnUpdateType.AutoSize = true;
             btnUpdateType.Location = new Point(130, 13);
             btnUpdateType.Name = "btnUpdateType";
-            btnUpdateType.Size = new Size(149, 31);
+            btnUpdateType.Size = new Size(151, 35);
             btnUpdateType.TabIndex = 1;
             btnUpdateType.Text = "Редактировать";
             btnUpdateType.UseVisualStyleBackColor = true;
@@ -76,9 +78,10 @@
             // 
             // btnDeleteType
             // 
-            btnDeleteType.Location = new Point(285, 13);
+            btnDeleteType.AutoSize = true;
+            btnDeleteType.Location = new Point(287, 13);
             btnDeleteType.Name = "btnDeleteType";
-            btnDeleteType.Size = new Size(91, 31);
+            btnDeleteType.Size = new Size(92, 35);
             btnDeleteType.TabIndex = 2;
             btnDeleteType.Text = "Удалить";
             btnDeleteType.UseVisualStyleBackColor = true;
@@ -88,10 +91,10 @@
             // 
             panelFill.Controls.Add(dataGridViewTypes);
             panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 57);
+            panelFill.Location = new Point(0, 61);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(934, 454);
+            panelFill.Size = new Size(934, 450);
             panelFill.TabIndex = 1;
             // 
             // dataGridViewTypes
@@ -105,7 +108,7 @@
             dataGridViewTypes.Name = "dataGridViewTypes";
             dataGridViewTypes.ReadOnly = true;
             dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewTypes.Size = new Size(914, 434);
+            dataGridViewTypes.Size = new Size(914, 430);
             dataGridViewTypes.TabIndex = 0;
             // 
             // FormListTypes
@@ -122,6 +125,7 @@
             Text = "Список типов аниме";
             Load += FormListTypes_Load;
             flowLayoutPanelTop.ResumeLayout(false);
+            flowLayoutPanelTop.PerformLayout();
             panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewTypes).EndInit();
             ResumeLayout(false);

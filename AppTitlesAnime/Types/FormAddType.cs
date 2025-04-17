@@ -24,7 +24,7 @@ namespace AppTitlesAnime
 
         }
 
-        private void TextBoxTypeName_Validating(object sender, CancelEventArgs e)
+        private void TextBoxGenreName_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxTypeName.Text))
             {
@@ -39,7 +39,7 @@ namespace AppTitlesAnime
 
         }
 
-        private void FormAddType_Validated(object sender, EventArgs e)
+        private void FormAddGenre_Validated(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxTypeName.Text))
             {
@@ -53,11 +53,11 @@ namespace AppTitlesAnime
             }
         }
 
-       
 
-        private void TextBoxTypeName_TextChanged(object sender, EventArgs e)
+
+        private void TextBoxGenreName_TextChanged(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(textBoxTypeName.Text))
+            if (String.IsNullOrEmpty(textBoxTypeName.Text))
             {
                 errorProvider.SetError(textBoxTypeName, "Поле не может быть пустым!");
                 btnSaveChanges.Enabled = false;
@@ -67,6 +67,16 @@ namespace AppTitlesAnime
                 errorProvider.Clear();
                 btnSaveChanges.Enabled = true;
             }
+        }
+
+        private void BtnSaveChanges_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

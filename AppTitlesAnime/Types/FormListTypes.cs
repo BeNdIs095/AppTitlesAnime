@@ -32,7 +32,7 @@ namespace AppTitlesAnime
 
             //Скрытие столбцов
             dataGridViewTypes.Columns["Id"].Visible = false;
-            dataGridViewTypes.Columns["AnimeTitles"].Visible = false;
+            dataGridViewTypes.Columns["TitlesGenres"].Visible = false;
 
             //Изменение названий заголовков столбцов
             dataGridViewTypes.Columns["TypeName"].HeaderText = "Тип аниме";
