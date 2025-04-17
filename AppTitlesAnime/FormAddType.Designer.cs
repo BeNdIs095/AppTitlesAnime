@@ -69,9 +69,9 @@
             labelTypeName.Dock = DockStyle.Top;
             labelTypeName.Location = new Point(10, 10);
             labelTypeName.Name = "labelTypeName";
-            labelTypeName.Size = new Size(106, 25);
+            labelTypeName.Size = new Size(104, 25);
             labelTypeName.TabIndex = 0;
-            labelTypeName.Text = "Тип Аниме";
+            labelTypeName.Text = "Тип аниме";
             // 
             // flowLayoutPanelBottom
             // 
