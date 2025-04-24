@@ -58,7 +58,7 @@ namespace AppTitlesAnime
 
         private void BtnSaveChanges_Click(object sender, EventArgs e)
         {
-        
+            
         }
 
         private void TextBoxGenreName_Validating(object sender, CancelEventArgs e)

@@ -25,7 +25,7 @@ namespace AppTitlesAnime
         {
             base.OnLoad(e);
             this.db = new AppContext();
-            this.db.Types.Load();
+            this.db.Genres.Load();
             this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
 
             //Скрытие столбцов
@@ -65,7 +65,7 @@ namespace AppTitlesAnime
             MessageBox.Show("Новый объект добавлен");
 
 
-            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
+            this.dataGridViewGenres.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
         }
 
         private void BtnUpdateGenre_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace AppTitlesAnime
 
             MessageBox.Show("Объект изменен");
 
-            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
+            this.dataGridViewGenres.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
         }
 
         private void dataGridViewGenres_CellContentClick(object sender, DataGridViewCellEventArgs e)

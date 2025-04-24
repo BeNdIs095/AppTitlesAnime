@@ -132,10 +132,10 @@
 
         private Panel panelTop;
         private FlowLayoutPanel flowLayoutPanelFill;
-        private Button btnSaveChanges;
         private Button btnCancel;
         private Label labelGenreName;
         private ErrorProvider errorProvider;
         protected internal TextBox textBoxGenreName;
+        protected Button btnSaveChanges;
     }
 }
