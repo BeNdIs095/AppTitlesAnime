@@ -60,8 +60,8 @@
             textBoxTypeName.Name = "textBoxTypeName";
             textBoxTypeName.Size = new Size(364, 33);
             textBoxTypeName.TabIndex = 1;
-            textBoxTypeName.TextChanged += TextBoxGenreName_TextChanged;
-            textBoxTypeName.Validating += TextBoxGenreName_Validating;
+            textBoxTypeName.TextChanged += TextBoxTypeName_TextChanged;
+            textBoxTypeName.Validating += TextBoxTypeName_Validating;
             // 
             // labelTypeName
             // 
@@ -126,7 +126,7 @@
             Name = "FormAddType";
             Text = "Информация о типе аниме";
             Load += FormAddType_Load;
-            Validated += FormAddGenre_Validated;
+            Validated += FormAddType_Validated;
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
             flowLayoutPanelBottom.ResumeLayout(false);

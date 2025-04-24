@@ -54,11 +54,14 @@
             // 
             // textBoxGenreName
             // 
-            textBoxGenreName.Location = new Point(10, 35);
+            textBoxGenreName.Location = new Point(12, 39);
+            textBoxGenreName.Margin = new Padding(3, 15, 3, 3);
             textBoxGenreName.Name = "textBoxGenreName";
-            textBoxGenreName.Size = new Size(364, 33);
-            textBoxGenreName.TabIndex = 1;
-            textBoxGenreName.TextChanged += TextBoxGenreName_TextChanged;
+            textBoxGenreName.Size = new Size(370, 33);
+            textBoxGenreName.TabIndex = 2;
+            textBoxGenreName.TextChanged += TextBoxGenreName_TextChanged_1;
+            textBoxGenreName.Validating += TextBoxGenreName_Validating;
+            textBoxGenreName.Validated += TextBoxGenreName_Validated;
             // 
             // labelGenreName
             // 
@@ -89,6 +92,7 @@
             btnSaveChanges.TabIndex = 0;
             btnSaveChanges.Text = "Сохранить";
             btnSaveChanges.UseVisualStyleBackColor = true;
+            btnSaveChanges.Click += BtnSaveChanges_Click;
             // 
             // btnCancel
             // 
@@ -98,7 +102,7 @@
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            btnCancel.Click += BtnCancel_Click;
             // 
             // errorProvider
             // 
@@ -131,7 +135,7 @@
         private Button btnSaveChanges;
         private Button btnCancel;
         private Label labelGenreName;
-        private TextBox textBoxGenreName;
         private ErrorProvider errorProvider;
+        protected internal TextBox textBoxGenreName;
     }
 }

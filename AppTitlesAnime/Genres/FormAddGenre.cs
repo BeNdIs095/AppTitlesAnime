@@ -37,7 +37,7 @@ namespace AppTitlesAnime
             }
         }
 
-        private void TextBoxGenreName_TextChanged(object sender, EventArgs e)
+        public void TextBoxGenreName_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxGenreName.Text))
             {
@@ -51,9 +51,56 @@ namespace AppTitlesAnime
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnSaveChanges_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void TextBoxGenreName_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            {
+                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым!");
+                btnSaveChanges.Enabled = false;
+            }
+            else
+            {
+                errorProvider.Clear();
+                btnSaveChanges.Enabled = true;
+            }
+        }
+
+        private void TextBoxGenreName_TextChanged_1(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            {
+                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым!");
+                btnSaveChanges.Enabled = false;
+            }
+            else
+            {
+                errorProvider.Clear();
+                btnSaveChanges.Enabled = true;
+            }
+        }
+
+        private void TextBoxGenreName_Validated(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            {
+                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым!");
+                btnSaveChanges.Enabled = false;
+            }
+            else
+            {
+                errorProvider.Clear();
+                btnSaveChanges.Enabled = true;
+            }
         }
     }
 }

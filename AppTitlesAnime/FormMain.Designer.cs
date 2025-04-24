@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             btnShowTypes = new Button();
-            btnShowGenres = new Button();
             labelTop = new Label();
             panelTop = new Panel();
             flowLayoutPanelFill = new FlowLayoutPanel();
+            btnShowGenres = new Button();
             panelTop.SuspendLayout();
             flowLayoutPanelFill.SuspendLayout();
             SuspendLayout();
@@ -47,16 +47,6 @@
             btnShowTypes.Text = "\"Типы аниме\"";
             btnShowTypes.UseVisualStyleBackColor = true;
             btnShowTypes.Click += BtnShowTypes_Click;
-            // 
-            // btnShowGenres
-            // 
-            btnShowGenres.Location = new Point(150, 3);
-            btnShowGenres.Name = "btnShowGenres";
-            btnShowGenres.Size = new Size(156, 43);
-            btnShowGenres.TabIndex = 1;
-            btnShowGenres.Text = "\"Жанры аниме\"";
-            btnShowGenres.UseVisualStyleBackColor = true;
-            btnShowGenres.Click += button1_Click;
             // 
             // labelTop
             // 
@@ -88,6 +78,17 @@
             flowLayoutPanelFill.Size = new Size(841, 587);
             flowLayoutPanelFill.TabIndex = 4;
             // 
+            // btnShowGenres
+            // 
+            btnShowGenres.AutoSize = true;
+            btnShowGenres.Location = new Point(150, 3);
+            btnShowGenres.Name = "btnShowGenres";
+            btnShowGenres.Size = new Size(157, 43);
+            btnShowGenres.TabIndex = 2;
+            btnShowGenres.Text = "\"Жанры аниме\"";
+            btnShowGenres.UseVisualStyleBackColor = true;
+            btnShowGenres.Click += BtnShowGenres_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -111,9 +112,10 @@
         #endregion
 
         private Button btnShowTypes;
-        private Button btnShowGenres;
         private Label labelTop;
         private Panel panelTop;
         private FlowLayoutPanel flowLayoutPanelFill;
+
+        private Button btnShowGenres;
     }
 }

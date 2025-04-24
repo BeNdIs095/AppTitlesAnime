@@ -73,7 +73,7 @@
             btnUpdateGenre.TabIndex = 2;
             btnUpdateGenre.Text = "Редактировать";
             btnUpdateGenre.UseVisualStyleBackColor = true;
-            btnUpdateGenre.Click += btnUpdateGenre_Click;
+            btnUpdateGenre.Click += BtnUpdateGenre_Click;
             // 
             // btnDeleteGenre
             // 
@@ -109,6 +109,7 @@
             dataGridViewGenres.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewGenres.Size = new Size(914, 430);
             dataGridViewGenres.TabIndex = 1;
+            dataGridViewGenres.CellContentClick += dataGridViewGenres_CellContentClick;
             // 
             // FormListGenres
             // 

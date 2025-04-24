@@ -33,7 +33,7 @@ namespace AppTitlesAnime
             dataGridViewGenres.Columns["TitlesGenres"].Visible = false;
 
             //Изменение названий заголовков столбцов
-            dataGridViewGenres.Columns["GenreName"].HeaderText = "Тип аниме";
+            dataGridViewGenres.Columns["GenreName"].HeaderText = "Жанры аниме";
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -50,14 +50,14 @@ namespace AppTitlesAnime
 
         private void BtnAddGenre_Click(object sender, EventArgs e)
         {
-            FormAddType formAddType = new();
-            DialogResult result = formAddType.ShowDialog(this);
+            FormAddGenre formAddGenre = new();
+            DialogResult result = formAddGenre.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
                 return;
 
             Genre genre = new Genre();
-            genre.GenreName = formAddType.textBoxTypeName.Text;
+            genre.GenreName = formAddGenre.textBoxGenreName.Text;
 
             db.Genres.Add(genre);
             db.SaveChanges();
@@ -68,7 +68,7 @@ namespace AppTitlesAnime
             this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
 
-        private void btnUpdateGenre_Click(object sender, EventArgs e)
+        private void BtnUpdateGenre_Click(object sender, EventArgs e)
         {
             if (dataGridViewGenres.SelectedRows.Count == 0)
                 return;
@@ -95,6 +95,11 @@ namespace AppTitlesAnime
             MessageBox.Show("Объект изменен");
 
             this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
+        }
+
+        private void dataGridViewGenres_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
