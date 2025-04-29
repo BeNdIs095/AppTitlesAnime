@@ -1,15 +1,8 @@
-﻿using AppTitlesAnime.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AppContext = AppTitlesAnime.Models.AppContext;
+using Genre = AppTitlesAnime.Models.Genre;
 
 namespace AppTitlesAnime
 {
@@ -43,29 +36,34 @@ namespace AppTitlesAnime
             this.db = null;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnDeleteGenre_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void BtnAddGenre_Click(object sender, EventArgs e)
-        {
-            FormAddGenre formAddGenre = new();
-            DialogResult result = formAddGenre.ShowDialog(this);
-
-            if (result == DialogResult.Cancel)
+            if (dataGridViewGenres.SelectedRows.Count == 0)
                 return;
 
-            Genre genre = new Genre();
-            genre.GenreName = formAddGenre.textBoxGenreName.Text;
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите удалить строку? \nВсе связанные данные будут удалены.",
+                "",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+            if (result == DialogResult.No)
+                return;
 
-            db.Genres.Add(genre);
+            int index = dataGridViewGenres.SelectedRows[0].Index;
+            short id = 0;
+            bool converted = Int16.TryParse(dataGridViewGenres[0, index].Value.ToString(), out id);
+            if (!converted)
+                return;
+
+            Genre genre = db.Genres.Find(id);
+
+            db.Genres.Remove(genre);
             db.SaveChanges();
 
-            MessageBox.Show("Новый объект добавлен");
+            MessageBox.Show("Объект удален");
 
-
-            this.dataGridViewGenres.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
 
         private void BtnUpdateGenre_Click(object sender, EventArgs e)
@@ -85,6 +83,8 @@ namespace AppTitlesAnime
 
             DialogResult result = formAddGenre.ShowDialog(this);
 
+            string newGenreName = formAddGenre.textBoxGenreName.Text.Trim();
+
             if (result == DialogResult.Cancel)
                 return;
 
@@ -94,12 +94,32 @@ namespace AppTitlesAnime
 
             MessageBox.Show("Объект изменен");
 
-            this.dataGridViewGenres.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
 
-        private void dataGridViewGenres_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnAddGenre_Click(object sender, EventArgs e)
         {
+            FormAddGenre formAddGenre = new();
+            DialogResult result = formAddGenre.ShowDialog(this);
 
+            if (result == DialogResult.Cancel)
+                return;
+
+            string newGenreName = formAddGenre.textBoxGenreName.Text.Trim();
+
+
+            Genre genre = new Genre();
+            genre.GenreName = formAddGenre.textBoxGenreName.Text;
+
+
+            db.Genres.Add(genre);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
+
+
     }
 }

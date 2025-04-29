@@ -1,14 +1,6 @@
-﻿using AppTitlesAnime.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AppContext = AppTitlesAnime.Models.AppContext;
 using Type = AppTitlesAnime.Models.Type;
 
@@ -17,20 +9,19 @@ namespace AppTitlesAnime
     public partial class FormListTypes : Form
     {
         private AppContext db;
-
         public FormListTypes()
         {
             InitializeComponent();
         }
 
         protected override void OnLoad(EventArgs e)
-        {
+        { 
             base.OnLoad(e);
             this.db = new AppContext();
             this.db.Types.Load();
             this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
 
-            //Скрытие столбцов
+            //Скрытие столбцов  
             dataGridViewTypes.Columns["Id"].Visible = false;
             dataGridViewTypes.Columns["AnimeTitles"].Visible = false;
 
@@ -45,12 +36,7 @@ namespace AppTitlesAnime
 
             this.db?.Dispose();
             this.db = null;
-        }
-
-        private void FlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        } 
 
         private void BtnAddType_Click(object sender, EventArgs e)
         {
@@ -70,11 +56,6 @@ namespace AppTitlesAnime
 
 
             this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
-        }
-
-        private void FormListTypes_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void BtnUpdateType_Click(object sender, EventArgs e)

@@ -33,6 +33,7 @@
             panelTop = new Panel();
             flowLayoutPanelFill = new FlowLayoutPanel();
             btnShowGenres = new Button();
+            btnShowStatuses = new Button();
             panelTop.SuspendLayout();
             flowLayoutPanelFill.SuspendLayout();
             SuspendLayout();
@@ -40,7 +41,7 @@
             // btnShowTypes
             // 
             btnShowTypes.AutoSize = true;
-            btnShowTypes.Location = new Point(3, 3);
+            btnShowTypes.Location = new Point(13, 13);
             btnShowTypes.Name = "btnShowTypes";
             btnShowTypes.Size = new Size(141, 43);
             btnShowTypes.TabIndex = 0;
@@ -56,7 +57,6 @@
             labelTop.Size = new Size(118, 25);
             labelTop.TabIndex = 0;
             labelTop.Text = "Отобразить:";
-            labelTop.Click += label1_Click;
             // 
             // panelTop
             // 
@@ -72,22 +72,35 @@
             // 
             flowLayoutPanelFill.Controls.Add(btnShowTypes);
             flowLayoutPanelFill.Controls.Add(btnShowGenres);
+            flowLayoutPanelFill.Controls.Add(btnShowStatuses);
             flowLayoutPanelFill.Dock = DockStyle.Fill;
             flowLayoutPanelFill.Location = new Point(0, 39);
             flowLayoutPanelFill.Name = "flowLayoutPanelFill";
+            flowLayoutPanelFill.Padding = new Padding(10);
             flowLayoutPanelFill.Size = new Size(841, 587);
             flowLayoutPanelFill.TabIndex = 4;
             // 
             // btnShowGenres
             // 
             btnShowGenres.AutoSize = true;
-            btnShowGenres.Location = new Point(150, 3);
+            btnShowGenres.Location = new Point(160, 13);
             btnShowGenres.Name = "btnShowGenres";
             btnShowGenres.Size = new Size(157, 43);
             btnShowGenres.TabIndex = 2;
             btnShowGenres.Text = "\"Жанры аниме\"";
             btnShowGenres.UseVisualStyleBackColor = true;
             btnShowGenres.Click += BtnShowGenres_Click;
+            // 
+            // btnShowStatuses
+            // 
+            btnShowStatuses.AutoSize = true;
+            btnShowStatuses.Location = new Point(323, 13);
+            btnShowStatuses.Name = "btnShowStatuses";
+            btnShowStatuses.Size = new Size(165, 43);
+            btnShowStatuses.TabIndex = 3;
+            btnShowStatuses.Text = "\"Статусы аниме\"";
+            btnShowStatuses.UseVisualStyleBackColor = true;
+            btnShowStatuses.Click += btnShowStatuses_Click;
             // 
             // FormMain
             // 
@@ -101,7 +114,6 @@
             Margin = new Padding(5);
             Name = "FormMain";
             Text = "Главная форма";
-            Load += FormMain_Load;
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             flowLayoutPanelFill.ResumeLayout(false);
@@ -117,5 +129,6 @@
         private FlowLayoutPanel flowLayoutPanelFill;
 
         private Button btnShowGenres;
+        private Button btnShowStatuses;
     }
 }

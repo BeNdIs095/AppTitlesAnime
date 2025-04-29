@@ -1,3 +1,5 @@
+using AppTitlesAnime.Statuses;
+
 namespace AppTitlesAnime
 {
     public partial class FormMain : Form
@@ -13,20 +15,16 @@ namespace AppTitlesAnime
             formListTypes.Show();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnShowGenres_Click(object sender, EventArgs e)
         {
             FormListGenres formListGenres = new FormListGenres();
             formListGenres.Show();
+        }
+
+        private void btnShowStatuses_Click(object sender, EventArgs e)
+        {
+            FormListStatus formListStatus = new FormListStatus();
+            formListStatus.Show();
         }
     }
 }

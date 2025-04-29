@@ -84,6 +84,7 @@
             btnDeleteGenre.TabIndex = 2;
             btnDeleteGenre.Text = "Удалить";
             btnDeleteGenre.UseVisualStyleBackColor = true;
+            btnDeleteGenre.Click += BtnDeleteGenre_Click;
             // 
             // panelFill
             // 
@@ -109,7 +110,6 @@
             dataGridViewGenres.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewGenres.Size = new Size(914, 430);
             dataGridViewGenres.TabIndex = 1;
-            dataGridViewGenres.CellContentClick += dataGridViewGenres_CellContentClick;
             // 
             // FormListGenres
             // 

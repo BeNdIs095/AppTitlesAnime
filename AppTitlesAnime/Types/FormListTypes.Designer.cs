@@ -52,7 +52,6 @@
             flowLayoutPanelTop.Padding = new Padding(10);
             flowLayoutPanelTop.Size = new Size(934, 61);
             flowLayoutPanelTop.TabIndex = 0;
-            flowLayoutPanelTop.Paint += FlowLayoutPanel1_Paint;
             // 
             // btnAddType
             // 
@@ -123,7 +122,6 @@
             Margin = new Padding(5);
             Name = "FormListTypes";
             Text = "Список типов аниме";
-            Load += FormListTypes_Load;
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             panelFill.ResumeLayout(false);

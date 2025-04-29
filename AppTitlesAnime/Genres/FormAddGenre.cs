@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppTitlesAnime.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace AppTitlesAnime
 
         }
 
-        private void FormAddType_Validated(object sender, EventArgs e)
+        private void FormAddGenre_Validated(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxGenreName.Text))
             {
